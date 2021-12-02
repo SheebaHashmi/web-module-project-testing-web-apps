@@ -103,8 +103,9 @@ test('renders all firstName, lastName and email text when submitted. Does NOT re
     userEvent.type(emailField,'mikesullivan@monster.inc');
     userEvent.click(submitBtn);
 
+    const message = await screen.findByLabelText(/message/i)
 
-    expect(messageField).toHaveTextContent("");
+    expect(message).toHaveTextContent("");
     expect(firstNameField).toBeInTheDocument();
     expect(lastNameField).toBeInTheDocument();
     expect(emailField).toBeInTheDocument();
